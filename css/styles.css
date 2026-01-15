@@ -386,4 +386,28 @@ body {
   color: var(--vino);
 }
 
+/*TERMINOS Y CONDICIONES */
+
+.legal h4 {
+    margin-top: 2.5rem;
+    font-weight: 600;
+}
+
+.legal p {
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.legal-date {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-bottom: 2rem;
+}
+
+.legal-accept {
+    margin-top: 3rem;
+    font-weight: 500;
+}
+
+
 
