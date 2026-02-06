@@ -159,6 +159,12 @@
         <p>
             La app es totalmente segura.
         </p>
+
+        <div class="descargas-container"> 
+            <h3>Descargas Totales:</h3> 
+            <div id="descargas">Cargando...</div> 
+        </div> 
+
     </div>
 </section>
 
@@ -171,6 +177,15 @@
     </p>
 </footer>
 
+<script> fetch(`https://api.github.com/repos/wttv2/ContactSV/releases`) 
+    .then(response => response.json()) 
+    .then(data => { let totalDownloads = 0; 
+    data.forEach(release => { release.assets.forEach(asset => { totalDownloads += asset.download_count; }); }); 
+    document.getElementById('descargas').textContent = totalDownloads; }) 
+    .catch(error => console.error('Error:', error)); 
+</script>
 
 </body>
 </html>
+
+
