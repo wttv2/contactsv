@@ -161,7 +161,8 @@
         </p>
 
         <div class="descargas-container"> 
-            <div id="descargas">Cargando...</div> 
+            <span style="font-size: 0.9em; opacity: 0.8; display: block; margin-bottom: 5px;">Descargas de la APK</span>
+        <div id="contador" style="font-size: 2.5em; font-weight: bold;">0</div>
             <h2>Veces Descargada</h2> 
         </div> 
 
@@ -177,12 +178,54 @@
     </p>
 </footer>
 
-<script> fetch(`https://api.github.com/repos/wttv2/contactsv/releases`) 
-    .then(response => response.json()) 
-    .then(data => { let totalDownloads = 0; 
-    data.forEach(release => { release.assets.forEach(asset => { totalDownloads += asset.download_count; }); }); 
-    document.getElementById('descargas').textContent = totalDownloads; }) 
-    .catch(error => console.error('Error:', error)); 
+<script>
+async function obtenerDescargas() {
+    const user = 'WTV2';
+    const repo = 'Contact-SV';
+    const url = `https://api.github.com/repos/wttv2/contactsv/releases`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        let totalDescargas = 0;
+        data.forEach(release => {
+            release.assets.forEach(asset => {
+                if (asset.name.endsWith('.apk')) {
+                    totalDescargas += asset.download_count;
+                }
+            });
+        });
+
+        animarContador(totalDescargas);
+    } catch (error) {
+        console.error("Error al obtener descargas:", error);
+        document.getElementById('contador').innerText = "error";
+    }
+}
+
+// Función para el efecto de conteo animado
+function animarContador(objetivo) {
+    const el = document.getElementById('contador');
+    let inicial = 0;
+    const duracion = 1500; // 1.5 segundos dura la animación
+    const incremento = objetivo / (duracion / 16); // 16ms es aprox 1 frame
+
+    const actualizar = () => {
+        inicial += incremento;
+        if (inicial < objetivo) {
+            el.innerText = Math.ceil(inicial).toLocaleString();
+            requestAnimationFrame(actualizar);
+        } else {
+            el.innerText = objetivo.toLocaleString();
+        }
+    };
+    
+    actualizar();
+}
+
+// Ejecutar al cargar la página
+obtenerDescargas();
 </script>
 
 </body>
