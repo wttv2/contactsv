@@ -177,7 +177,7 @@
     </p>
 </footer>
 
-<script> fetch(`https://api.github.com/repos/wttv2/ContactSV/releases`) 
+<script> fetch(`https://api.github.com/repos/wttv2/contactsv/releases`) 
     .then(response => response.json()) 
     .then(data => { let totalDownloads = 0; 
     data.forEach(release => { release.assets.forEach(asset => { totalDownloads += asset.download_count; }); }); 
