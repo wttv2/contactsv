@@ -411,14 +411,14 @@ body {
 
 /*Descargas*/
 .descargas-container { 
-    background-color: #800020; 
-    color: white; 
+    background: var(--vino);
+    color: var(--blanco);
     padding: 20px; 
     border-radius: 10px; 
     text-align: center; 
     font-family: sans-serif; }
 
 #descargas { 
-    font-size: 24px; 
+    font-size: 36px; 
     font-weight: bold; 
     margin-top: 10px; }
