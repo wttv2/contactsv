@@ -1,11 +1,13 @@
 /* VARIABLES */
 :root {
-  --vino: #7b1e2b;
-  --vino-oscuro: #5a141f;
-  --negro: #121212;
-  --gris-oscuro: #1e1e1e;
+  --vino: #002e69;
+  --vino-oscuro: #223C6D;
+  --negro: #001336;
+  --gris-oscuro: #0073a5;
   --blanco: #ffffff;
   --gris-claro: #e5e5e5;
+  --negro: #0a0a0a;
+
 }
 
 /* RESET */
@@ -31,7 +33,7 @@ body {
 
 /* HEADER */
 .header {
-  background: var(--gris-oscuro);
+  background: var(--gris-claro);
   padding: 1rem 0;
 }
 
@@ -46,7 +48,7 @@ body {
 }
 
 .nav a {
-  color: var(--blanco);
+  color: var(--negro);
   margin-left: 20px;
   text-decoration: none;
 }
@@ -135,7 +137,7 @@ body {
 
 /* FEATURES */
 .features {
-  background: var(--gris-oscuro);
+  background: var(--vino);
   padding: 3rem 0;
 }
 
@@ -164,7 +166,7 @@ body {
 
 /* FOOTER */
 .footer {
-  background: var(--gris-oscuro);
+  background: var(--vino);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
