@@ -192,77 +192,53 @@
 </footer>
 
 <script>
-    // 1. DESCARGA INVISIBLE (Método Blob)
-    document.querySelectorAll('.descarga-directa').forEach(link => {
-        link.addEventListener('click', async function(e) {
-            e.preventDefault();
-            const url = this.getAttribute('href');
-            
-            // Cambiamos el texto del botón para dar feedback al usuario
-            const originalText = this.innerText;
-            this.innerText = "Preparando descarga...";
-            this.style.pointerEvents = "none"; // Evita múltiples clics
+async function obtenerDescargas() {
+    const user = 'WTV2';
+    const repo = 'Contact-SV';
+    const url = `https://api.github.com/repos/wttv2/contactsv/releases`;
 
-            try {
-                const response = await fetch(url);
-                const blob = await response.blob();
-                const blobUrl = window.URL.createObjectURL(blob);
-                
-                // Creamos un enlace temporal para disparar la descarga
-                const tempLink = document.createElement('a');
-                tempLink.href = blobUrl;
-                tempLink.download = "ContactAd_v2.0.5.apk";
-                document.body.appendChild(tempLink);
-                tempLink.click();
-                
-                // Limpiamos
-                document.body.removeChild(tempLink);
-                window.URL.revokeObjectURL(blobUrl);
-            } catch (error) {
-                // Si falla por CORS, usamos el método del iframe como respaldo
-                document.getElementById('download_frame').src = url;
-            } finally {
-                this.innerText = originalText;
-                this.style.pointerEvents = "auto";
-            }
-        });
-    });
-
-    // 2. CONTADOR DE GITHUB API (Se mantiene igual)
-    async function obtenerDescargas() {
-        const apiURL = `https://api.github.com/repos/wttv2/contactsv/releases`;
-        try {
-            const response = await fetch(apiURL);
-            const data = await response.json();
-            let totalDescargas = 0;
-            data.forEach(release => {
-                release.assets.forEach(asset => {
-                    if (asset.name.toLowerCase().endsWith('.apk')) {
-                        totalDescargas += asset.download_count;
-                    }
-                });
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        let totalDescargas = 0;
+        data.forEach(release => {
+            release.assets.forEach(asset => {
+                if (asset.name.endsWith('.apk')) {
+                    totalDescargas += asset.download_count;
+                }
             });
-            animarContador(totalDescargas);
-        } catch (error) {
-            document.getElementById('contador').innerText = "--";
+        });
+
+        animarContador(totalDescargas);
+    } catch (error) {
+        console.error("Error al obtener descargas:", error);
+        document.getElementById('contador').innerText = "error";
+    }
+}
+
+// Función para el efecto de conteo animado
+function animarContador(objetivo) {
+    const el = document.getElementById('contador');
+    let inicial = 0;
+    const duracion = 1500; // 1.5 segundos dura la animación
+    const incremento = objetivo / (duracion / 16); // 16ms es aprox 1 frame
+
+    const actualizar = () => {
+        inicial += incremento;
+        if (inicial < objetivo) {
+            el.innerText = Math.ceil(inicial).toLocaleString();
+            requestAnimationFrame(actualizar);
+        } else {
+            el.innerText = objetivo.toLocaleString();
         }
-    }
+    };
+    
+    actualizar();
+}
 
-    function animarContador(objetivo) {
-        const el = document.getElementById('contador');
-        let actual = 0;
-        const timer = setInterval(() => {
-            actual += objetivo / 60;
-            if (actual >= objetivo) {
-                el.innerText = objetivo.toLocaleString();
-                clearInterval(timer);
-            } else {
-                el.innerText = Math.ceil(actual).toLocaleString();
-            }
-        }, 20);
-    }
-
-    window.onload = obtenerDescargas;
+// Ejecutar al cargar la página
+obtenerDescargas();
 </script>
 
 </body>
