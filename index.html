@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ContactAd | Contactos Clasificados</title>
     <meta name="description" content="ContactAd es una app de contactos clasificados en español. Diseño moderno, seguro y fácil de usar.">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+    <!-- HEADER -->
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="img/logo_full.png" alt="ContactSv" class="logo-img">
             </a>
+
             <nav class="nav">
                 <a href="#features">Características</a>
                 <a href="#about">Sobre la app</a>
@@ -22,119 +25,223 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-text fade-up">
-                <h2>Contactos clasificados con estilo, seguridad y privacidad</h2>
-                <p>
-                    ||| ContactAd es la app de contactos clasificados en español que combina un diseño moderno, una experiencia intuitiva y un enfoque sólido en la seguridad y privacidad de los usuarios. |||
-                </p>
-            
-                <a href="https://github.com/wttv2/contactsv/releases/download/v2.0.5/contactAd_v2.0.5.apk" 
+    <!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+        <div class="hero-text fade-up">
+            <h2>Contactos clasificados con estilo, seguridad y privacidad</h2>
+            <p>
+                ||| ContactAd es la app de contactos clasificados en español que combina un diseño moderno, una experiencia intuitiva y un enfoque sólido en la seguridad y privacidad de los usuarios. |||
+            </p>
+        
+            <a href="https://github.com/wttv2/contactsv/releases/download/v2.0.5/contactAd_v2.0.5.apk" 
                    class="btn-primary download-link" 
                    download="ContactAd.apk" 
                    rel="noopener noreferrer">
                    Disponible para Android
                 </a>
-            </div>
-            <br/>
-            <div style="font-size: small;">
-                <p>Nota importante: Android puede mostrar una advertencia al instalar aplicaciones fuera de Google Play Store. 
-                   Esto es normal. Asegúrate de descargar ContactAd desde 
-                   <a href="https://github.com/wttv2/contactsv/releases/download/v2.0.5/contactAd_v2.0.5.apk" 
+        </div>
+        <br/>
+        <p style="font-size: small;">
+                Nota importante: Android puede mostrar una advertencia al instalar aplicaciones fuera de Google Play Store.
+                Esto es normal para aplicaciones de fuentes externas. Asegúrate de descargar ContactAd desde
+                    <a href="https://github.com/wttv2/contactsv/releases/download/v2.0.5/contactAd_v2.0.5.apk" 
                       class="download-link" 
                       download="ContactAd.apk">nuestra fuente oficial.</a>
-                </p>
-                <p>La app es totalmente segura.</p>
+                
+                La app es totalmente segura.
+        </p>
+    </div>
+</section>
+
+
+    <section class="app-preview">
+    <div class="container preview-content">
+        <div class="preview-image fade-up delay-1">
+
+            <img src="img/mockup.jpg" alt="Vista previa de ContactAd">
+        </div>
+
+        <div class="preview-text fade-up delay-2">
+
+            <h3>Una experiencia pensada para el usuario</h3>
+            <p>
+                ContactAd ofrece una interfaz moderna, intuitiva y optimizada
+                para que publicar o encontrar contactos clasificados sea rápido
+                y sencillo desde tu celular.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- FEATURES -->
+    <section id="features" class="features">
+        <div class="container">
+            <h3>Características</h3>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="img/img_fondo2.jpg" width="60px" alt="Diseño moderno" class="feature-icon">
+                    <h4>Diseño moderno</h4>
+                    <p>Interfaz limpia, elegante y pensada para el usuario.</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="img/Como-hacer-una-politica-de-privacidad.jpg" width="60px" alt="Privacidad" class="feature-icon">
+                    <h4>Privacidad</h4>
+                    <p>Protección de datos y control total de tus publicaciones.</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="img/Discrecion.jpg" width="60px" alt="Discreción" class="feature-icon">
+                    <h4>Discreción</h4>
+                    <p>Cambia la apariencia de la app para una experiencia más discreta.</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="img/pin.avif" width="60px" alt="seguridad" class="feature-icon">
+                    <h4>Ingreso seguro</h4>
+                    <p>Establece un pin para ingresar a la App.</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="img/rapida.png" width="60px" alt="seguridad" class="feature-icon">
+                    <h4>Rápido y sencillo</h4>
+                    <p>Publica y encuentra contactos en minutos.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="container">
+            <h3>Sobre ContactAd</h3>
+            <p>
+                ContactAd nace como una alternativa moderna y local para
+                clasificados de contacto, enfocada en paises de habla hispana,
+                priorizando diseño, seguridad y facilidad de uso.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h3>Contacto</h3>
+            <p>
+                ¿Tienes dudas o sugerencias?
+            </p>
+            <br>
+            <a href="mailto:arcardev77@gmail.com" class="btn-secondary">
+                Escríbenos
+            </a>
         </div>
     </section>
 
     <section class="download">
-        <div class="container download-content fade-up">
-            <h3>Descarga <span>ContactAd</span></h3>
-            <p>Disponible para dispositivos Android. Descubre una nueva forma de publicar y encontrar contactos de manera rápida y segura.</p>
+    <div class="container download-content fade-up">
+        <h3>Descarga <span>ContactAd</span></h3>
 
-            <div class="store-buttons">
-                <a href="https://github.com/wttv2/contactsv/releases/download/v2.0.5/contactAd_v2.0.5.apk" 
+        <p>
+            Disponible para dispositivos Android.
+            Descubre una nueva forma de publicar y encontrar contactos con otras personas
+            de manera rápida y segura.
+        </p>
+
+        <div class="store-buttons">
+            <a href="https://github.com/wttv2/contactsv/releases/download/v2.0.5/contactAd_v2.0.5.apk" 
                    class="store-btn download-link" 
                    download="ContactAd.apk" 
                    rel="noopener noreferrer"> 
                     Click para descargar
-                </a>
-            </div>
-            <br/>
-            <div style="font-size: small;">
-                <p>Nota importante: Android puede mostrar una advertencia al instalar fuera de Play Store. Asegúrate de descargar desde 
-                    <a href="https://github.com/wttv2/contactsv/releases/download/v2.0.5/contactAd_v2.0.5.apk" 
-                       class="download-link" 
-                       download="ContactAd.apk">nuestra fuente oficial.</a>
-                </p>
-            </div>
-
-            <div class="descargas-container"> 
-                <span style="font-size: 0.9em; opacity: 0.8; display: block; margin-bottom: 5px;">Descargas de la APK</span>
-                <div id="contador" style="font-size: 2.5em; font-weight: bold;">0</div>
-                <h2>Veces Descargada</h2> 
-            </div> 
+            </a>
         </div>
-    </section>
+        <br/>
+        <p style="font-size: small;">
+            Nota importante: Android puede mostrar una advertencia al instalar aplicaciones fuera de Google Play Store.
+            Esto es normal para aplicaciones de fuentes externas. Asegúrate de descargar ContactAd desde
+            <a href="https://github.com/wttv2/contactsv/releases/download/v2.0.5/contactAd_v2.0.5.apk" 
+                       class="download-link" 
+                       download="ContactAd.apk">nuestra fuente oficial.
+            </a>
+        </p>
+        <p>
+            La app es totalmente segura.
+        </p>
 
+        <div class="descargas-container"> 
+            <span style="font-size: 0.9em; opacity: 0.8; display: block; margin-bottom: 5px;">Descargas de la APK</span>
+        <div id="contador" style="font-size: 2.5em; font-weight: bold;">0</div>
+            <h2>Veces Descargada</h2> 
+        </div> 
+
+    </div>
+</section>
+
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2026 ContactAd · <a href="privacy.html">Política de privacidad</a> y <a href="terms.html">Términos y condiciones</a></p>
-    </footer>
+    <p>
+      © 2026 ContactAd ·
+      <a href="privacy.html">Política de privacidad</a> y <a href="terms.html">Términos y condiciones</a>
+    </p>
+</footer>
 
-    <script>
-        // Lógica para forzar descarga sin abrir ventanas nuevas
-        document.querySelectorAll('.download-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Prevenimos que el navegador intente "navegar"
-                e.preventDefault();
-                const url = this.getAttribute('href');
-                // Forzamos la descarga en el mismo frame
-                window.location.assign(url);
+<script>
+async function obtenerDescargas() {
+    const user = 'WTV2';
+    const repo = 'Contact-SV';
+    const url = `https://api.github.com/repos/wttv2/contactsv/releases`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        let totalDescargas = 0;
+        data.forEach(release => {
+            release.assets.forEach(asset => {
+                if (asset.name.endsWith('.apk')) {
+                    totalDescargas += asset.download_count;
+                }
             });
         });
 
-        async function obtenerDescargas() {
-            const url = `https://api.github.com/repos/wttv2/contactsv/releases`;
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                let totalDescargas = 0;
-                data.forEach(release => {
-                    release.assets.forEach(asset => {
-                        if (asset.name.endsWith('.apk')) {
-                            totalDescargas += asset.download_count;
-                        }
-                    });
-                });
-                animarContador(totalDescargas);
-            } catch (error) {
-                console.error("Error al obtener descargas:", error);
-                document.getElementById('contador').innerText = "--";
-            }
-        }
+        animarContador(totalDescargas);
+    } catch (error) {
+        console.error("Error al obtener descargas:", error);
+        document.getElementById('contador').innerText = "error";
+    }
+}
 
-        function animarContador(objetivo) {
-            const el = document.getElementById('contador');
-            let inicial = 0;
-            const duracion = 1500;
-            const incremento = objetivo / (duracion / 16);
-            const actualizar = () => {
-                inicial += incremento;
-                if (inicial < objetivo) {
-                    el.innerText = Math.ceil(inicial).toLocaleString();
-                    requestAnimationFrame(actualizar);
-                } else {
-                    el.innerText = objetivo.toLocaleString();
-                }
-            };
-            actualizar();
-        }
+// Función para el efecto de conteo animado
+function animarContador(objetivo) {
+    const el = document.getElementById('contador');
+    let inicial = 0;
+    const duracion = 1500; // 1.5 segundos dura la animación
+    const incremento = objetivo / (duracion / 16); // 16ms es aprox 1 frame
 
-        obtenerDescargas();
-    </script>
+    const actualizar = () => {
+        inicial += incremento;
+        if (inicial < objetivo) {
+            el.innerText = Math.ceil(inicial).toLocaleString();
+            requestAnimationFrame(actualizar);
+        } else {
+            el.innerText = objetivo.toLocaleString();
+        }
+    };
+    
+    actualizar();
+}
+
+// Ejecutar al cargar la página
+obtenerDescargas();
+</script>
+
 </body>
 </html>
+
+
